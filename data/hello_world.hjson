@@ -1,0 +1,39 @@
+{ name: "hello_world",
+  clock_primary: "clk_i",
+  bus_interfaces: [
+    { protocol: "tlul", direction: "device" }
+  ],
+  available_input_list: [
+  ],
+  available_output_list: [
+  ],
+  interrupt_list: [
+  ],
+  regwidth: "32",
+  no_auto_intr_regs: "true",
+  registers: [
+    { name: "orig_reg",
+      desc: "hello world register",
+      swaccess: "wo",
+      hwaccess: "hro",
+      fields: [
+        { bits: "31:0"
+          name: "r"
+          desc: "Original write from software"
+        }
+      ]
+    },
+    { name: "flip_reg",
+      desc: "byte flip of hello_world_reg ",
+      swaccess: "ro",
+      hwaccess: "hwo",
+      fields: [
+        { bits: "31:0"
+          name: "r"
+          desc: "Flipped read by software"
+        }
+      ]
+    }
+  ],
+}
+

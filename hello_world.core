@@ -1,0 +1,21 @@
+CAPI=2:
+name: "lowrisc:ip:hello_world:0.1"
+description: "Hello World"
+filesets:
+  files_rtl:
+    depend:
+      - lowrisc:prim:all
+      - lowrisc:ip:tlul
+    files:
+      - rtl/hello_world_reg_pkg.sv
+      - rtl/hello_world_reg_top.sv
+      - rtl/hello_world_core.sv
+      - rtl/hello_world.sv
+    file_type: systemVerilogSource
+
+targets:
+  default:
+    filesets:
+      - files_rtl
+    toplevel: hello_world
+
